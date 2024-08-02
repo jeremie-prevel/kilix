@@ -14,9 +14,9 @@ import { Image } from 'astro:assets';
   </head>
 
   <body>
-    <header>
+    <header role='banner'>
       <h1>Kilix</h1>
-      <nav>
+      <nav role='navigation' aria-label='menu principal'>
         <ul>
           <li><a href='#demarche'>Notre démarche</a></li>
           <li><a href='#expertise'>Accompagnement</a></li>
@@ -25,7 +25,7 @@ import { Image } from 'astro:assets';
         </ul>
       </nav>
     </header>
-    <main>
+    <main role='main'>
       <section id='hero'>
         <h2>Kilix</h2>
         <div class='colonne'>
@@ -102,6 +102,6 @@ import { Image } from 'astro:assets';
       </section>
     </main>
 
-    <footer></footer>
+    <footer role='contentinfo'></footer>
   </body>
 </html>

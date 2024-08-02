@@ -1,0 +1,16 @@
+.skiplink {
+  /*
+    permet de masquer la barre d'accès rapide dans le  cas ou elle ne serait pas intégré dans les maquettes.
+    ne pas passer par display:none, aria-hidden="true" ou autre élément qui empêcherait la prise de focus et donc l'utilisation de la barre.
+    infos : https://disic.github.io/guide-integrateur/2-navigation.html 
+    */
+  position: absolute;
+  left: -10000px;
+}
+.skiplink:focus-within {
+  /*
+    permet d'afficher la barre d'accès rapide quand on prend le focus sur un des liens (au clavier).
+    :focus-within non compatible avec IE, en cas de support il faudra remplacer par .skiplink a:focus et gérer l'affichage en conséquences*/
+  position: inherit;
+  left: 0;
+}

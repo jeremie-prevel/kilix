@@ -1,0 +1,79 @@
+---
+import SkiplinkA11Y from '../component/skiplink-a11y.astro';
+import imgLogoFull from '../img/logo-full.png';
+import { Image } from 'astro:assets';
+
+const mainH1 = 'Kilix: La solution futée à vos projets';
+const skipLink = [
+  { label: 'Aller au contenu principal', href: '#contenu-principal' },
+];
+const menus = [
+  { label: 'nos Services', href: '#services' },
+  { label: 'nos Clients', href: '#clients' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const { pageTitle } = Astro.props;
+---
+
+<html lang='fr'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <link rel='stylesheet' href='/pico.red.min.css' />
+    <link rel='stylesheet' href='/global.css' />
+    <link rel='stylesheet' href='/a11y.css' />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <SkiplinkA11Y skipLink={skipLink} />
+    <!-- header principal  -->
+
+    <header role='banner' class='container-fluid kilix-header'>
+      <h1 class='sr-only'>{mainH1}</h1><!-- au moins 1 H1 sur le site -->
+      <!-- navigation principal  -->
+      <nav
+        role='navigation'
+        id='menu-principal'
+        aria-label='menu principal'
+        class='menu-principal'
+      >
+        <ul>
+          <li>
+            <a href='/'>
+              <Image src={imgLogoFull} alt='' class='logo_img' loading='eager'>
+                <span class='sr-only'>Kilix : accueil du site web</span></Image
+              >
+              <p class='logo_slogan'>La solution futée à vos projets</p>
+            </a>
+          </li>
+          <ul class='menu-principal_list'>
+            {
+              menus.map((menu) => (
+                <li>
+                  <a href={menu.href} title={menu.label} class='actif'>
+                    {menu.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- contenu principal  -->
+    <main role='main' id='contenu-principal'>
+      <slot />
+    </main>
+
+    <!-- footer principal  -->
+    <footer role='contentinfo' class='container-fluid'>
+      <ul>
+        <li><a href='page-a11y.html'>Accessibilité: Conforme</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

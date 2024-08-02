@@ -1,0 +1,62 @@
+@import 'styles/reset.css';
+@import 'styles/a11y.css';
+
+:root {
+  --kilix-red: #ff6347;
+  --accent-color: var(--kilix-red);
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+header {
+  padding: 1rem;
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main {
+  border: 1px solid red;
+}
+
+footer {
+  border: 1px solid blue;
+}
+
+section {
+  min-height: 25vh;
+}
+
+section,
+div {
+  border: 1px solid lightgray;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  color: var(--accent-color);
+}
+
+/* navigation */
+nav li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1rem;
+}
+nav a {
+  text-decoration: none;
+}
+/* //navigation */
+
+/* generique */
+.colonne {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* //generique */

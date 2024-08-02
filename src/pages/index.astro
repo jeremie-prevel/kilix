@@ -1,0 +1,107 @@
+---
+import imgRenard from '../img/logo-renard.png';
+import { Image } from 'astro:assets';
+---
+
+<!doctype html>
+<html lang='fr'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='icon' type='image/svg+xml' href='/kilix/favicon.ico' />
+    <title>Kilix | Accueil</title>
+    <link rel='stylesheet' href='/kilix/style.css' />
+  </head>
+
+  <body>
+    <header>
+      <h1>Kilix</h1>
+      <nav>
+        <ul>
+          <li><a href='#demarche'>Notre démarche</a></li>
+          <li><a href='#expertise'>Accompagnement</a></li>
+          <li><a href='#clients'>Nos clients</a></li>
+          <li><a href='#contact'>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id='hero'>
+        <h2>Kilix</h2>
+        <div class='colonne'>
+          <p>La solution futée à vos projets</p>
+
+          <Image src={imgRenard} alt='' />
+        </div>
+      </section>
+      <section id='demarche'>
+        <h2>Notre démarche</h2>
+        <div class='colonne'>
+          <div>
+            <h3>D'abord Qui ?</h3>
+            <p>
+              Parce que chaque client est différent, il est essentiel de
+              comprendre son métier, ses attentes et ses contraintes.
+            </p>
+            <p>
+              Démarrer un projet avec nous, c'est avant tout créer un
+              partenariat pour vous assister au mieu dans vos objectifs.
+            </p>
+          </div>
+          <div>
+            <h3>Ensuite Quoi ?</h3>
+            <p>
+              Laisser nos expert trouver la solution en utilisant les
+              technologies les plus adaptés à votre besoin et en tenant compte
+              de votre environnement.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id='expertise'>
+        <h2>Besoin de conseils ?</h2>
+        <div>
+          <h3>Une vague idée de projet ou besoin de tester un concept ?</h3>
+          <p>
+            Nous pouvons vous accompagner à l'élaboration de votre besoin, faire
+            des maquettes static ou interractive via des "Proof Of Concept" pour
+            visualiser votre besoin en situation.
+          </p>
+        </div>
+        <div>
+          <h3>Besoin d'évaluer votre budget ?</h3>
+          <p>
+            A l'aide de votre cahier des charges, nous pouvons vous proposer un
+            cadrage de projet et évaluer l'enveloppe budgetaire nécessaire à sa
+            réalisation, pas de surprises, tout est clair entre partenaires.
+          </p>
+        </div>
+        <div>
+          <h3>Une application en production ?</h3>
+          <p>
+            Que ce soit pour des problèmes de performance, un besoin de
+            maintenance, ou d'évolution, nous pouvons vous accompagner sur la
+            gestion et le suivi de vos application.
+          </p>
+        </div>
+      </section>
+      <section id='clients'>
+        <h2>Ils nous ont fait confiance</h2>
+        <ul>
+          <li>FCIS</li>
+          <li>Maugin</li>
+          <li>Fehr</li>
+          <li>Orange</li>
+          <li>...</li>
+        </ul>
+      </section>
+      <section id='contact'>
+        <h2>Contact</h2>
+        <a href='mailto:contact@kilix.fr'>Kilix</a>
+        <p></p>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
